@@ -38,3 +38,10 @@ sendBtn.addEventListener('click', async () => {
   chatbox.innerHTML += `<div class="text-left mb-2 text-gray-800">GPT: ${reply}</div>`;
   chatbox.scrollTop = chatbox.scrollHeight;
 });
+
+userInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault(); // 폼 제출 방지 등 기본 동작 방지
+    sendBtn.click(); // 버튼 클릭 트리거
+  }
+});
